@@ -8,6 +8,7 @@ const bodyParser = require('body-parser')
 
 const citiesRoute = require('./routes/cities')
 const statesRoute = require('./routes/states')
+const port = process.env.PORT || 3000;
 
 require('dotenv/config')
 
@@ -23,3 +24,5 @@ mongoose.connect(process.env.DB_CONNECTION,
     { useNewUrlParser: true, useUnifiedTopology: true}, () => {
         console.log('connected to Database')
 })
+
+app.listen(port);
